@@ -11,7 +11,7 @@ on:
       - main
 
 jobs:
-  sonatype-scan:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
