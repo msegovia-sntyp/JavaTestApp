@@ -36,8 +36,8 @@ jobs:
           application-id: maria-test-app
           scan-targets: '**/*.jar'
           sarif-file: 'sariffile.sarif'
-        upload-sarif-file: 'true'
-        enable-callflow: true 
+          upload-sarif-file: 'true'
+          enable-callflow: true 
 
       
       
