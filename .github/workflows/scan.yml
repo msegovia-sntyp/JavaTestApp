@@ -32,7 +32,7 @@ jobs:
         with:
           iq-server-url: https://int-test.sonatype.app/platform/ 
           username: ${{ secrets.INT_USERNAME }}
-          password: ${{ secrets.INT_PSSWRD }}
+          password: ${{ secrets.INT_PSWRD }}
           application-id: maria-test-app
           scan-targets: '**/*.jar'
           sarif-file: 'sariffile.sarif'
