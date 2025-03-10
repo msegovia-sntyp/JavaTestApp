@@ -17,25 +17,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-     - name: Set up JDK 1.8
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '8'
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
 
-    - name: Build with Maven
-      run: mvn -B --file pom.xml package dependency:copy-dependencies
+      - name: Build with Maven
+        run: mvn -B --file pom.xml package dependency:copy-dependencies
 
       - name: Run Evaluate Action
         id: evaluate
         uses: sonatype/actions/evaluate@v1.3.0
-       with:
-        iq-server-url: https://int-test.sonatype.app/platform/ 
-        username: ${{ secrets.INT_USERNAME }}
-        password: ${{ secrets.INT_PSSWRD }}
-        application-id: maria-test-app
-        scan-targets: '**/*.jar'
-        sarif-file: 'sariffile.sarif'
+        with:
+          iq-server-url: https://int-test.sonatype.app/platform/ 
+          username: ${{ secrets.INT_USERNAME }}
+          password: ${{ secrets.INT_PSSWRD }}
+          application-id: maria-test-app
+          scan-targets: '**/*.jar'
+          sarif-file: 'sariffile.sarif'
         upload-sarif-file: 'true'
         enable-callflow: true 
 
