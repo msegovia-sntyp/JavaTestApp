@@ -1,0 +1,42 @@
+
+
+name: Sonatype Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonatype-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Install dependencies
+        run: mvn install
+
+      - name: Run Evaluate Action
+      id: evaluate
+      uses: sonatype/actions/evaluate@v1.3.0
+      with:
+        iq-server-url: https://int-test.sonatype.app/platform/ 
+        username: ${{ secrets.INT_USERNAME }}
+        password: ${{ secrets.INT_PSSWRD }}
+        application-id: maria-test-app
+        scan-targets: '**/*.jar'
+        sarif-file: 'sariffile.sarif'
+        upload-sarif-file: 'true'
+        enable-callflow: true 
+
+      
+      
