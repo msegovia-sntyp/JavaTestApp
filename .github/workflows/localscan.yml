@@ -1,4 +1,4 @@
-name: Sonatype Scan
+name: Local Sonatype Scan
 
 on:
   push:
