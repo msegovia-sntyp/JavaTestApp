@@ -29,10 +29,10 @@ jobs:
         id: evaluate
         uses: sonatype/actions/evaluate@v1.3.0
         with:
-          iq-server-url: https://int-test.sonatype.app/platform/ 
-          username: ${{ secrets.INT_USERNAME }}
-          password: ${{ secrets.INT_PSWRD }}
-          application-id: maria-test-app
+          iq-server-url: http://localhost:8070/iq-server.com/ 
+          username: ${{ secrets.LOCAL_USR }}
+          password: ${{ secrets.LOCAL_PSCD }}
+          application-id: JavaTestApp
           scan-targets: '**/*.jar'
           sarif-file: 'sariffile.sarif'
           upload-sarif-file: 'true'
