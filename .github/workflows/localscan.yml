@@ -29,7 +29,7 @@ jobs:
         id: evaluate
         uses: sonatype/actions/evaluate@v1.3.0
         with:
-          iq-server-url: http://localhost:8070/iq-server.com/ 
+          iq-server-url: http://192.168.68.106:8070/iq-server.com/
           username: ${{ secrets.LOCAL_USR }}
           password: ${{ secrets.LOCAL_PSCD }}
           application-id: JavaTestApp
