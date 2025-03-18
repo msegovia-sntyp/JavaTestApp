@@ -31,7 +31,7 @@ jobs:
         id: evaluate
         uses: sonatype/actions/evaluate@v1.3.0
         with:
-          iq-server-url: https://int-test.sonatype.app/platform/ 
+          iq-server-url: http://localhost:8070/ 
           username: ${{ secrets.LOCAL_USR }}
           password: ${{ secrets.LOCAL_PSCD }}
           application-id: maria-test-app
