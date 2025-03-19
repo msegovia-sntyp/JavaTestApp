@@ -31,7 +31,7 @@ jobs:
         id: evaluate
         uses: sonatype/actions/evaluate@v1.3.0
         with:
-          iq-server-url: http://192.168.68.106:8070/ 
+          iq-server-url: https://bfc9-186-30-130-36.ngrok-free.app
           username: ${{ secrets.LOCAL_USR }}
           password: ${{ secrets.LOCAL_PSCD }}
           application-id: maria-test-app
