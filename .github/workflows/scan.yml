@@ -32,8 +32,8 @@ jobs:
         uses: sonatype/actions/evaluate@v1.3.0
         with:
           iq-server-url: https://int-test.sonatype.app/platform/ 
-          username: ${{ secrets.LOCAL_USR }}
-          password: ${{ secrets.LOCAL_PSCD }}
+          username: ${{ secrets.INT_PSWRD }}
+          password: ${{ secrets.INT_USERNAME }}
           application-id: maria-test-app
           scan-targets: '**/*.jar'
           enable-callflow: true 
