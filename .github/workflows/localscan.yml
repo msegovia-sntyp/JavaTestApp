@@ -32,7 +32,7 @@ jobs:
           iq-server-url: https://e0d3-201-244-174-197.ngrok-free.app
           username: ${{ secrets.LOCAL_USR }}
           password: ${{ secrets.LOCAL_PSCD }}
-          application-id: JavaTestApp
+          application-id: java-reachability-01
           scan-targets: '**/*.jar'
           sarif-file: 'sariffile.sarif'
           upload-sarif-file: 'true'
