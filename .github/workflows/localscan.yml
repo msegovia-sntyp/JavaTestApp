@@ -29,7 +29,7 @@ jobs:
         id: evaluate
         uses: sonatype/actions/evaluate@v1.3.0
         with:
-          iq-server-url: https://e0d3-201-244-174-197.ngrok-free.app
+          iq-server-url: https://19873dc31532.ngrok.app
           username: ${{ secrets.LOCAL_USR }}
           password: ${{ secrets.LOCAL_PSCD }}
           application-id: java-reachability-01
